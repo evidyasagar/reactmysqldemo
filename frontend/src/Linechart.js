@@ -18,7 +18,7 @@ function LineChart({ data, title }) {
           },
           scales: {
             x: { title: { display: true, text: "Time" } },
-            y: { title: { display: true, text: "Total counts" } },
+            y: { title: { display: true, text: "Total Orders" } },
           },
           ticks: {
             precision: 0,
