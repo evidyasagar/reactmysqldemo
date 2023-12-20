@@ -1,16 +1,40 @@
-// App.js
+import React, { useEffect, useState } from 'react'
+import './App.css';
 
-import React from 'react';
-//import Graph from './Graph';
-import LineChart from './Linechart';
+function App(){
+  const [data, setData] = useState([])
+  useEffect(() =>{
+fetch('http://localhost:8082/maoorders')
+.then(res => res.json())
+//.then(data => console.log(data))
+//.then(err => console.log(err));
+//Rewrite these statements to pass the data to the variable
+.then(data => setData(data))
+.then(err => console.log(err));;
+  },[])
+  return(
+    <div style={{padding : "50px"}}>
+      <table>
+        <thead>
+          <th>time</th>
+          <th>Orders</th>
+          <th>SOU</th>
+          <th>SourceDB</th>
+        </thead>
+        <tbody>
+          {data.map(d=> (
+            <tr>
+              <td>{d.time}</td>
+              <td>{d.Orders}</td>
+              <td>{d.SOU}</td>
+              <td>{d.SourceDB}</td>
+            </tr>
+          ))}
+        </tbody>
+      
+      </table>
+      </div>
+  )
+}
 
-const App = () => {
-  return (
-    <div>
-      <h1>OPM orders</h1>
-      <LineChart />
-    </div>
-  );
-};
-
-export default App;
+export default App
