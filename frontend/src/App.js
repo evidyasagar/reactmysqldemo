@@ -4,7 +4,7 @@ import './App.css';
 function App(){
   const [data, setData] = useState([])
   useEffect(() =>{
-fetch('http://localhost:8082/maoorders')
+fetch('http://localhost:8082/amoorders')
 .then(res => res.json())
 //.then(data => console.log(data))
 //.then(err => console.log(err));
