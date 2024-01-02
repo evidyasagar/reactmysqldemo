@@ -11,7 +11,7 @@ const db=mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password:'P@ssw0rd123',
-    database: 'maoordersreport',
+    database: 'amoordersreport',
     debug: true,
     wait_timeout : 28800,
     connect_timeout :10
@@ -21,8 +21,8 @@ app.get('/', (re, res) =>{
     return res.json("From Backend Side");
 
 })
-app.get('/maoorders', (req, res) => {
-    const sql = "SELECT * FROM maoorder";
+app.get('/amoorders', (req, res) => {
+    const sql = "SELECT * FROM amoorder";
     db.query(sql, (err, data) =>{
         if(err) return res.json("Error...");
         return res.json(data);
