@@ -1,5 +1,6 @@
 import React from "react";
 import { Line } from "react-chartjs-2";
+import App_3 from "./App_3";
 function LineChart({ data, title }) {
   return (
     <div className="chart-container">
